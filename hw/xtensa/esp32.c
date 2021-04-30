@@ -2561,6 +2561,8 @@ if (addr>=0x12000 && addr<0x13ffc) {
 
 }
 
+extern void esp32_i2c_interruptSet(qemu_irq new_irq);
+
 typedef struct Esp32WifiState {
 
     uint32_t reg[0x10000];
@@ -2832,7 +2834,7 @@ rom_i2c_reg block 0x67 reg 0x6 57
 
 extern void esp32_i2c_fifo_dataSet(int offset,unsigned int data);
 
-extern void esp32_i2c_interruptSet(qemu_irq new_irq);
+
 
 
 static void esp_wifi_write(void *opaque, hwaddr addr,
