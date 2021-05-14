@@ -2032,9 +2032,7 @@ static uint64_t esp_io_read(void *opaque, hwaddr addr,
     return 0x0;
 }
 
-
-
-
+extern void esp32_i2c_interruptSet(qemu_irq new_irq);
 
 static void esp_io_write(void *opaque, hwaddr addr,
         uint64_t val, unsigned size)
@@ -2560,8 +2558,6 @@ if (addr>=0x12000 && addr<0x13ffc) {
     }
 
 }
-
-extern void esp32_i2c_interruptSet(qemu_irq new_irq);
 
 typedef struct Esp32WifiState {
 
